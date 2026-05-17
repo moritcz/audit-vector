@@ -1,0 +1,33 @@
+<!doctype html>
+<html><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body style="margin:0;background:#222">
+<div id="status" style="color:white;padding:8px">loading...</div>
+<script>
+(async () => {
+  const s = document.getElementById('status');
+  try {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const res = await fetch('uploads/Presentation.pdf');
+    const data = new Uint8Array(await res.arrayBuffer());
+    s.textContent = 'loaded ' + data.length;
+    const pdf = await pdfjsLib.getDocument({ data }).promise;
+    s.textContent = 'pages: ' + pdf.numPages;
+    for (const p of [1,5,6,9,13,21]) {
+      const page = await pdf.getPage(p);
+      const vp = page.getViewport({ scale: 1.0 });
+      const canvas = document.createElement('canvas');
+      canvas.width = vp.width; canvas.height = vp.height;
+      canvas.style.cssText = 'display:block;margin:8px auto;background:white;width:90vw;max-width:900px;height:auto';
+      document.body.appendChild(canvas);
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+      s.textContent = 'rendered ' + p;
+    }
+    document.title = 'DONE';
+  } catch (e) {
+    s.textContent = 'ERR: ' + e.message;
+  }
+})();
+</script>
+</body></html>
