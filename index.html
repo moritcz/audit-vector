@@ -69,8 +69,10 @@ img { display: block; max-width: 100%; }
 }
 
 .btn-primary {
+  display: inline-block;
   background: var(--ink);
   color: #fff;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
   padding: 10px 18px;
@@ -78,12 +80,15 @@ img { display: block; max-width: 100%; }
   border: none;
   line-height: 1;
   transition: opacity 0.15s;
+  text-align: center;
 }
 .btn-primary:hover { opacity: 0.85; }
 
 .btn-ghost {
+  display: inline-block;
   background: transparent;
   color: var(--ink);
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 500;
   padding: 10px 18px;
@@ -91,6 +96,7 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--line);
   line-height: 1;
   transition: border-color 0.15s;
+  text-align: center;
 }
 .btn-ghost:hover { border-color: var(--ink-3); }
 
@@ -102,6 +108,7 @@ img { display: block; max-width: 100%; }
   font-size: 16px;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  color: var(--ink);
 }
 .logo .mark {
   width: 28px;
@@ -140,7 +147,6 @@ img { display: block; max-width: 100%; }
   top: 0;
   z-index: 100;
 }
-
 .site-nav {
   display: flex;
   gap: 32px;
@@ -148,7 +154,6 @@ img { display: block; max-width: 100%; }
   color: var(--ink-2);
 }
 .site-nav a:hover { color: var(--brand); }
-
 .header-right {
   display: flex;
   align-items: center;
@@ -160,7 +165,6 @@ img { display: block; max-width: 100%; }
   font-variant-numeric: tabular-nums;
   font-family: 'JetBrains Mono', monospace;
 }
-
 .mobile-burger {
   display: none;
   width: 36px;
@@ -173,12 +177,7 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   gap: 4px;
 }
-.mobile-burger span {
-  display: block;
-  width: 16px;
-  height: 1.5px;
-  background: var(--ink);
-}
+.mobile-burger span { display: block; width: 16px; height: 1.5px; background: var(--ink); }
 
 /* ============ HERO ============ */
 .hero {
@@ -188,9 +187,7 @@ img { display: block; max-width: 100%; }
   gap: 80px;
   border-bottom: 1px solid var(--line);
 }
-
 .hero-eyebrow { margin-bottom: 24px; }
-
 .hero h1 {
   font-size: 68px;
   line-height: 1.04;
@@ -199,11 +196,7 @@ img { display: block; max-width: 100%; }
   margin-bottom: 28px;
   text-wrap: balance;
 }
-.hero h1 em {
-  font-style: normal;
-  color: var(--brand);
-}
-
+.hero h1 em { font-style: normal; color: var(--brand); }
 .hero .lead {
   font-size: 19px;
   line-height: 1.5;
@@ -211,16 +204,9 @@ img { display: block; max-width: 100%; }
   max-width: 580px;
   margin-bottom: 40px;
 }
-
-.hero-ctas {
-  display: flex;
-  gap: 12px;
-}
+.hero-ctas { display: flex; gap: 12px; }
 .hero-ctas .btn-primary,
-.hero-ctas .btn-ghost {
-  padding: 14px 24px;
-  font-size: 15px;
-}
+.hero-ctas .btn-ghost { padding: 14px 24px; font-size: 15px; }
 
 /* License card */
 .lic-card {
@@ -250,54 +236,30 @@ img { display: block; max-width: 100%; }
   padding-top: 22px;
   border-top: 1px solid var(--line);
 }
-.lic-rows .k {
-  font-size: 11px;
-  color: var(--ink-4);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
-}
-.lic-rows .v {
-  font-size: 14px;
-  color: var(--ink);
-  font-weight: 500;
-}
+.lic-rows .k { font-size: 11px; color: var(--ink-4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.lic-rows .v { font-size: 14px; color: var(--ink); font-weight: 500; }
 
-/* Stats row */
+/* Stats strip — sits BELOW the hero */
 .hero-stats {
-  margin-top: 64px;
-  padding-top: 48px;
-  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 48px;
-  grid-column: 1 / -1;
+  border-bottom: 1px solid var(--line);
 }
-.stat .n {
-  font-size: 56px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1;
+.stat {
+  padding: 48px 64px 48px 0;
+  border-right: 1px solid var(--line);
+  margin-left: 64px;
 }
-.stat .n .unit {
-  font-size: 24px;
-  color: var(--ink-3);
-  margin-left: 4px;
-}
-.stat .lbl {
-  margin-top: 12px;
-  font-size: 14px;
-  color: var(--ink-3);
-  max-width: 220px;
-  line-height: 1.45;
-}
+.stat:last-child { border-right: none; }
+.stat .n { font-size: 56px; font-weight: 500; letter-spacing: -0.03em; line-height: 1; }
+.stat .n .unit { font-size: 24px; color: var(--ink-3); margin-left: 4px; }
+.stat .lbl { margin-top: 12px; font-size: 14px; color: var(--ink-3); max-width: 220px; line-height: 1.45; }
 
 /* ============ SECTION BASE ============ */
 .section {
   padding: 120px 64px;
   border-bottom: 1px solid var(--line);
 }
-
 .section-head {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
@@ -340,6 +302,7 @@ img { display: block; max-width: 100%; }
   color: var(--ink-4);
   letter-spacing: 0.05em;
 }
+.service-card .service-body { flex: 1; display: flex; flex-direction: column; }
 .service-card h3 {
   font-size: 22px;
   font-weight: 500;
@@ -347,12 +310,7 @@ img { display: block; max-width: 100%; }
   margin: 56px 0 14px;
   line-height: 1.2;
 }
-.service-card p {
-  font-size: 14px;
-  color: var(--ink-3);
-  line-height: 1.55;
-  flex: 1;
-}
+.service-card p { font-size: 14px; color: var(--ink-3); line-height: 1.55; flex: 1; }
 .service-card .more {
   margin-top: 20px;
   font-size: 13px;
@@ -363,11 +321,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============ CASES ============ */
-.cases-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
+.cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .case-card {
   background: var(--ink);
   color: #fff;
@@ -377,11 +331,7 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   min-height: 380px;
 }
-.case-card.light {
-  background: var(--surface);
-  color: var(--ink);
-  border: 1px solid var(--line);
-}
+.case-card.light { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
 .case-card .tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
@@ -394,318 +344,139 @@ img { display: block; max-width: 100%; }
   align-self: flex-start;
 }
 .case-card.light .tag { color: var(--ink-4); border-color: var(--line); }
-
-.case-card h3 {
-  font-size: 28px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin: 28px 0 6px;
-  line-height: 1.15;
-}
-.case-card .sub {
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-  margin-bottom: 28px;
-}
+.case-card h3 { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; margin: 28px 0 6px; line-height: 1.15; }
+.case-card .sub { font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 28px; }
 .case-card.light .sub { color: var(--ink-3); }
-
-.case-card ul { }
 .case-card li {
-  font-size: 14px;
-  line-height: 1.5;
-  padding: 12px 0;
+  font-size: 14px; line-height: 1.5; padding: 12px 0;
   border-top: 1px solid rgba(255,255,255,0.1);
-  display: grid;
-  grid-template-columns: 22px 1fr;
-  gap: 8px;
+  display: grid; grid-template-columns: 22px 1fr; gap: 8px;
 }
 .case-card.light li { border-top-color: var(--line); }
-.case-card li::before {
-  content: "→";
-  color: var(--brand-2);
-  font-size: 14px;
-}
+.case-card li::before { content: "→"; color: var(--brand-2); font-size: 14px; }
 .case-card.light li::before { color: var(--brand); }
-
 .case-card .meta {
-  margin-top: auto;
-  padding-top: 28px;
-  display: flex;
-  align-items: baseline;
-  gap: 24px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  margin-top: auto; padding-top: 28px;
+  display: flex; align-items: baseline; gap: 24px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
   color: rgba(255,255,255,0.5);
 }
 .case-card.light .meta { color: var(--ink-4); }
 .case-card .meta .big {
-  font-family: 'Inter', sans-serif;
-  font-size: 36px;
-  font-weight: 500;
-  color: #fff;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif; font-size: 36px; font-weight: 500;
+  color: #fff; letter-spacing: -0.02em;
 }
 .case-card.light .meta .big { color: var(--ink); }
 
 /* ============ COMPETENCIES ============ */
 .comp-section { background: var(--surface); }
-.comp-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-}
-.comp-item {
-  padding: 36px 48px 36px 0;
-  border-bottom: 1px solid var(--line);
-}
+.comp-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.comp-item { padding: 36px 48px 36px 0; border-bottom: 1px solid var(--line); }
 .comp-item:nth-child(3n) { padding-right: 0; }
 .comp-item .ico {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--ink);
-  border-radius: 4px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 20px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  font-weight: 500;
+  width: 36px; height: 36px; border: 1px solid var(--ink); border-radius: 4px;
+  display: grid; place-items: center; margin-bottom: 20px;
+  font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 500;
 }
-.comp-item h4 {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-.comp-item p {
-  font-size: 14px;
-  color: var(--ink-3);
-  line-height: 1.55;
-}
+.comp-item h4 { font-size: 18px; font-weight: 500; margin-bottom: 8px; letter-spacing: -0.01em; }
+.comp-item p { font-size: 14px; color: var(--ink-3); line-height: 1.55; }
 
 /* ============ CLIENTS ============ */
 .clients-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line); border-left: 1px solid var(--line);
 }
 .client-cell {
   padding: 32px 28px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  min-height: 140px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border-right: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  min-height: 140px; display: flex; flex-direction: column; justify-content: space-between;
 }
-.client-cell .name {
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.35;
-  color: var(--ink);
-}
+.client-cell .name { font-size: 15px; font-weight: 500; line-height: 1.35; color: var(--ink); }
 .client-cell .ind {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--ink-4);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 12px;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  color: var(--ink-4); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 12px;
 }
 
 /* ============ PRINCIPLES ============ */
-.princ-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-}
-.princ-item .num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  color: var(--brand);
-  letter-spacing: 0.1em;
-}
-.princ-item h4 {
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin: 48px 0 12px;
-  line-height: 1.15;
-}
-.princ-item p {
-  font-size: 14px;
-  color: var(--ink-3);
-  line-height: 1.55;
-}
+.princ-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.princ-item .num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--brand); letter-spacing: 0.1em; }
+.princ-item h4 { font-size: 24px; font-weight: 500; letter-spacing: -0.02em; margin: 48px 0 12px; line-height: 1.15; }
+.princ-item p { font-size: 14px; color: var(--ink-3); line-height: 1.55; }
 
 /* ============ CTA ============ */
-.cta-section {
-  background: var(--ink);
-  color: #fff;
-  padding: 96px 64px;
-}
-.cta-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 80px;
-  align-items: end;
-}
+.cta-section { background: var(--ink); color: #fff; padding: 96px 64px; }
+.cta-inner { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 80px; align-items: end; }
 .cta-section .eyebrow { color: var(--brand-2); }
 .cta-section .eyebrow::before { background: var(--brand-2); }
 .cta-inner h2 {
-  font-size: 52px;
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-  font-weight: 500;
-  margin-top: 24px;
-  overflow-wrap: break-word;
+  font-size: 52px; line-height: 1.06; letter-spacing: -0.03em;
+  font-weight: 500; margin-top: 24px; overflow-wrap: break-word;
 }
 .cta-inner h2 em { font-style: normal; color: var(--brand-2); }
-
 .cta-form {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: var(--radius-lg);
-  padding: 28px;
+  border-radius: var(--radius-lg); padding: 28px;
 }
-.cta-form .row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-.cta-form input,
-.cta-form textarea {
-  width: 100%;
-  background: transparent;
+.cta-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.cta-form input, .cta-form textarea {
+  width: 100%; background: transparent;
   border: 1px solid rgba(255,255,255,0.18);
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  padding: 14px;
-  border-radius: var(--radius);
-  outline: none;
-  transition: border-color 0.15s;
+  color: #fff; font-family: 'Inter', sans-serif; font-size: 14px;
+  padding: 14px; border-radius: var(--radius); outline: none; transition: border-color 0.15s;
 }
-.cta-form input:focus,
-.cta-form textarea:focus { border-color: rgba(255,255,255,0.4); }
-.cta-form input::placeholder,
-.cta-form textarea::placeholder { color: rgba(255,255,255,0.45); }
-.cta-form textarea {
-  resize: none;
-  height: 92px;
-  margin-bottom: 16px;
-  display: block;
-}
+.cta-form input:focus, .cta-form textarea:focus { border-color: rgba(255,255,255,0.4); }
+.cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(255,255,255,0.45); }
+.cta-form textarea { resize: none; height: 92px; margin-bottom: 16px; display: block; }
 .cta-form button {
-  width: 100%;
-  background: #fff;
-  color: var(--ink);
-  font-family: 'Inter', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  padding: 14px;
-  border-radius: var(--radius);
-  border: none;
-  transition: opacity 0.15s;
+  width: 100%; background: #fff; color: var(--ink);
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 500;
+  padding: 14px; border-radius: var(--radius); border: none; transition: opacity 0.15s;
 }
 .cta-form button:hover { opacity: 0.9; }
 
 /* ============ FOOTER ============ */
-.site-footer {
-  padding: 56px 64px 40px;
-  background: var(--bg);
-}
+.site-footer { padding: 56px 64px 40px; background: var(--bg); }
 .footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--line);
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--line);
 }
 .footer-col h5 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-4);
-  font-weight: 500;
-  margin-bottom: 16px;
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--ink-4); font-weight: 500; margin-bottom: 16px;
 }
-.footer-col p,
-.footer-col a {
-  display: block;
-  font-size: 14px;
-  color: var(--ink-2);
-  margin-bottom: 8px;
+.footer-col p, .footer-col a, .footer-col span {
+  display: block; font-size: 14px; color: var(--ink-2); margin-bottom: 8px;
 }
 .footer-col a:hover { color: var(--brand); }
-.footer-col .tagline {
-  margin-top: 16px;
-  color: var(--ink-3);
-  font-size: 13px;
-  max-width: 320px;
-  line-height: 1.5;
-}
-
+.footer-col .tagline { margin-top: 16px; color: var(--ink-3); font-size: 13px; max-width: 320px; line-height: 1.5; }
 .footer-bot {
-  padding-top: 28px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: var(--ink-4);
-  font-family: 'JetBrains Mono', monospace;
+  padding-top: 28px; display: flex; justify-content: space-between;
+  font-size: 12px; color: var(--ink-4); font-family: 'JetBrains Mono', monospace;
 }
 
-/* ============ MOBILE NAV DRAWER ============ */
-.nav-drawer {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-}
+/* ============ NAV DRAWER ============ */
+.nav-drawer { display: none; position: fixed; inset: 0; z-index: 200; }
 .nav-drawer.open { display: block; }
-.nav-drawer-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(10,22,40,0.5);
-}
+.nav-drawer-backdrop { position: absolute; inset: 0; background: rgba(10,22,40,0.5); }
 .nav-drawer-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 280px;
-  background: var(--bg);
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  position: absolute; top: 0; right: 0; bottom: 0; width: 280px;
+  background: var(--bg); padding: 24px 20px;
+  display: flex; flex-direction: column; gap: 0;
 }
 .nav-drawer-close {
-  align-self: flex-end;
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--bg);
-  font-size: 18px;
-  color: var(--ink);
-  display: grid;
-  place-items: center;
-  margin-bottom: 16px;
+  align-self: flex-end; width: 36px; height: 36px; border-radius: var(--radius);
+  border: 1px solid var(--line); background: var(--bg);
+  font-size: 18px; color: var(--ink); display: grid; place-items: center; margin-bottom: 16px;
 }
 .nav-drawer-panel a {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--ink);
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line-2);
+  font-size: 18px; font-weight: 500; color: var(--ink);
+  padding: 14px 0; border-bottom: 1px solid var(--line-2);
 }
 .nav-drawer-panel a:last-of-type { border-bottom: none; }
 .nav-drawer-panel a:hover { color: var(--brand); }
 
-/* ============ RESPONSIVE ============ */
+/* ============ TABLET ============ */
 @media (max-width: 1024px) {
   .site-header { padding: 0 32px; }
   .site-nav { gap: 20px; }
@@ -713,177 +484,156 @@ img { display: block; max-width: 100%; }
   .hero { padding: 60px 32px 72px; gap: 48px; }
   .hero h1 { font-size: 52px; }
 
+  .hero-stats .stat { margin-left: 32px; padding: 40px 32px 40px 0; }
+
   .section { padding: 80px 32px; }
   .section-head { grid-template-columns: 220px minmax(0,1fr); gap: 48px; }
 
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .princ-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .site-footer { padding: 40px 32px; }
   .cta-section { padding: 72px 32px; }
 }
 
+/* ============ MOBILE ============ */
 @media (max-width: 768px) {
-  .site-header {
-    height: 56px;
-    padding: 0 20px;
-  }
-  .site-nav,
-  .header-phone,
-  .header-cta { display: none; }
+  /* Header */
+  .site-header { height: 56px; padding: 0 20px; }
+  .site-nav, .header-phone, .header-cta { display: none; }
   .mobile-burger { display: flex; }
 
+  /* Hero — single column */
   .hero {
     padding: 32px 20px 40px;
     grid-template-columns: 1fr;
     gap: 0;
+    border-bottom: none;
   }
-  .hero h1 {
-    font-size: 34px;
-    line-height: 1.08;
-    letter-spacing: -0.025em;
-    margin: 16px 0;
-  }
-  .hero .lead {
-    font-size: 15px;
-    margin-bottom: 24px;
-  }
+  .hero h1 { font-size: 34px; line-height: 1.08; letter-spacing: -0.025em; margin: 16px 0; }
+  .hero .lead { font-size: 15px; margin-bottom: 24px; }
   .hero-ctas { display: grid; gap: 8px; }
   .hero-ctas .btn-primary,
-  .hero-ctas .btn-ghost {
-    padding: 14px 18px;
-    font-size: 15px;
-    text-align: center;
-    width: 100%;
-  }
+  .hero-ctas .btn-ghost { padding: 14px 18px; font-size: 15px; width: 100%; }
 
-  .lic-card {
-    margin-top: 28px;
-    padding: 20px;
-  }
+  /* License card */
+  .lic-card { margin-top: 28px; padding: 20px; }
   .lic-card .num { font-size: 18px; }
-  .lic-rows .k,
   .lic-card .lbl { font-size: 10px; }
-  .lic-rows .v { font-size: 13px; }
   .lic-rows { gap: 16px; margin-top: 16px; padding-top: 16px; }
+  .lic-rows .k { font-size: 10px; }
+  .lic-rows .v { font-size: 13px; }
 
+  /* Stats strip — edge-to-edge 2×2 grid */
   .hero-stats {
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
     border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
   .stat {
+    margin-left: 0;
     padding: 24px 20px;
+    border-right: none;
     border-bottom: 1px solid var(--line);
   }
   .stat:nth-child(odd) { border-right: 1px solid var(--line); }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
   .stat .n { font-size: 36px; }
   .stat .n .unit { font-size: 16px; }
-  .stat .lbl { font-size: 12px; margin-top: 8px; }
+  .stat .lbl { font-size: 12px; margin-top: 8px; max-width: none; }
 
+  /* Sections */
   .section { padding: 56px 20px; }
-  .section-head {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
+  .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
   .section-head h2 { font-size: 30px; }
   .section-head .desc { font-size: 14px; padding-top: 0; }
 
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card { min-height: auto; padding: 24px 0; border-right: none; }
-  .service-card h3 { font-size: 18px; margin: 0 0 6px; }
-  .service-card p { font-size: 13px; }
-  .service-card .more { display: none; }
-  /* Mobile services as list */
+  /* Services — list style */
   .services-grid {
+    grid-template-columns: 1fr;
     border-left: none;
-    border-top: none;
+    border-top: 1px solid var(--line);
   }
   .service-card {
-    border-bottom: 1px solid var(--line);
     display: grid;
-    grid-template-columns: 36px 1fr 16px;
+    grid-template-columns: 36px 1fr 20px;
     gap: 16px;
     align-items: start;
     padding: 24px 0;
     border-right: none;
+    border-top: none;
+    border-bottom: 1px solid var(--line);
     min-height: 0;
   }
-  .service-card .num { padding-top: 4px; }
-  .service-card h3 { margin: 0 0 6px; }
+  .service-card .num { font-size: 11px; padding-top: 3px; }
+  .service-card .service-body { flex: none; }
+  .service-card h3 { font-size: 17px; font-weight: 500; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .service-card p { font-size: 13px; }
   .service-card .more {
-    display: block;
-    margin-top: 4px;
-    color: var(--brand);
-    font-size: 16px;
+    font-size: 16px; margin-top: 0; color: var(--brand);
+    display: flex; align-items: flex-start; padding-top: 3px;
   }
 
+  /* Cases */
   .cases-grid { grid-template-columns: 1fr; gap: 16px; }
   .case-card { padding: 28px 24px; min-height: auto; }
   .case-card h3 { font-size: 22px; margin: 18px 0 4px; }
   .case-card .sub { font-size: 13px; margin-bottom: 20px; }
   .case-card li { font-size: 13px; padding: 10px 0; }
   .case-card .meta .big { font-size: 28px; }
+  .case-card .meta { font-size: 11px; }
 
+  /* Competencies */
   .comp-grid { grid-template-columns: 1fr; }
   .comp-item {
     padding: 24px 0;
     display: grid;
-    grid-template-columns: 36px 1fr;
+    grid-template-columns: 44px 1fr;
     gap: 16px;
     align-items: start;
   }
+  .comp-item:nth-child(3n) { padding-right: 0; }
   .comp-item .ico { margin-bottom: 0; }
-  .comp-item h4 { font-size: 16px; margin: 4px 0 4px; }
+  .comp-item h4 { font-size: 16px; margin: 2px 0 4px; }
   .comp-item p { font-size: 13px; }
 
+  /* Clients */
   .clients-grid { grid-template-columns: 1fr 1fr; }
   .client-cell { padding: 18px 16px; min-height: 100px; }
   .client-cell .name { font-size: 13px; }
   .client-cell .ind { font-size: 10px; }
 
+  /* Principles */
   .princ-grid { grid-template-columns: 1fr; gap: 0; }
   .princ-item { padding: 24px 0; border-bottom: 1px solid var(--line); }
   .princ-item:last-child { border-bottom: none; }
   .princ-item h4 { font-size: 20px; margin: 16px 0 6px; }
   .princ-item p { font-size: 13px; }
 
+  /* CTA */
   .cta-section { padding: 56px 20px; }
-  .cta-inner {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .cta-inner h2 { font-size: 32px; margin-top: 12px; }
+  .cta-inner { grid-template-columns: 1fr; gap: 28px; align-items: start; }
+  .cta-inner h2 { font-size: 30px; margin-top: 12px; }
   .cta-form { padding: 0; background: transparent; border: none; border-radius: 0; }
-  .cta-form .row { grid-template-columns: 1fr; gap: 8px; }
-  .cta-form input,
-  .cta-form textarea { padding: 12px 14px; margin-bottom: 8px; }
-  .cta-form textarea { height: 80px; }
+  .cta-form .row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+  .cta-form input, .cta-form textarea { padding: 13px 14px; margin-bottom: 10px; }
+  .cta-form textarea { height: 80px; margin-bottom: 10px; }
+  .cta-form button { margin-top: 4px; }
 
+  /* Footer */
   .site-footer { padding: 32px 20px 24px; }
-  .footer-top { grid-template-columns: 1fr; gap: 0; }
+  .footer-top { grid-template-columns: 1fr; gap: 0; padding-bottom: 0; border-bottom: none; }
   .footer-col { padding: 16px 0; border-bottom: 1px solid var(--line); }
   .footer-col:last-child { border-bottom: none; }
   .footer-col h5 { font-size: 10px; margin-bottom: 10px; }
-  .footer-col p,
-  .footer-col a { font-size: 13px; }
-  .footer-bot {
-    flex-direction: column;
-    gap: 4px;
-    font-size: 10px;
-    padding-top: 16px;
-  }
+  .footer-col p, .footer-col a, .footer-col span { font-size: 13px; }
+  .footer-bot { flex-direction: column; gap: 4px; font-size: 10px; padding-top: 16px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ====== NAV DRAWER (MOBILE) ====== -->
+<!-- NAV DRAWER (MOBILE) -->
 <div class="nav-drawer" id="navDrawer" aria-hidden="true">
   <div class="nav-drawer-backdrop" id="drawerBackdrop"></div>
   <nav class="nav-drawer-panel">
@@ -896,13 +646,12 @@ img { display: block; max-width: 100%; }
   </nav>
 </div>
 
-<!-- ====== HEADER ====== -->
+<!-- HEADER -->
 <header class="site-header">
   <a href="/" class="logo" aria-label="Audit Vector — на главную">
     <div class="mark" aria-hidden="true">AV</div>
     <span>Audit Vector</span>
   </a>
-
   <nav class="site-nav" aria-label="Основная навигация">
     <a href="#services">Услуги</a>
     <a href="#cases">Опыт</a>
@@ -910,7 +659,6 @@ img { display: block; max-width: 100%; }
     <a href="#about">О компании</a>
     <a href="#contact">Контакты</a>
   </nav>
-
   <div class="header-right">
     <span class="header-phone mono">+7 (XXX) XXX-XX-XX</span>
     <a href="#contact" class="btn-primary header-cta">Связаться</a>
@@ -920,7 +668,7 @@ img { display: block; max-width: 100%; }
   </div>
 </header>
 
-<!-- ====== HERO ====== -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-main">
     <div class="eyebrow hero-eyebrow">Аудит · Инвентаризация · Астана</div>
@@ -931,51 +679,39 @@ img { display: block; max-width: 100%; }
       <button class="btn-ghost">Скачать презентацию</button>
     </div>
   </div>
-
   <aside class="lic-card" aria-label="Государственная лицензия">
     <div class="lbl">Государственная лицензия</div>
     <div class="num">№&nbsp;24032816</div>
     <div class="lic-rows">
-      <div>
-        <div class="k">Выдана</div>
-        <div class="v">13 ноября 2024</div>
-      </div>
-      <div>
-        <div class="k">Орган</div>
-        <div class="v">КК МФ РК</div>
-      </div>
-      <div>
-        <div class="k">Регистрация</div>
-        <div class="v">09 июня 2022</div>
-      </div>
-      <div>
-        <div class="k">Членство</div>
-        <div class="v">Союз Аудиторов&nbsp;РК</div>
-      </div>
+      <div><div class="k">Выдана</div><div class="v">13 ноября 2024</div></div>
+      <div><div class="k">Орган</div><div class="v">КК МФ РК</div></div>
+      <div><div class="k">Регистрация</div><div class="v">09 июня 2022</div></div>
+      <div><div class="k">Членство</div><div class="v">Союз Аудиторов&nbsp;РК</div></div>
     </div>
   </aside>
-
-  <div class="hero-stats">
-    <div class="stat">
-      <div class="n">3<span class="unit">года</span></div>
-      <div class="lbl">Сопровождение инвентаризации KATCO без перерыва</div>
-    </div>
-    <div class="stat">
-      <div class="n">7+</div>
-      <div class="lbl">Крупных промышленных и государственных клиентов</div>
-    </div>
-    <div class="stat">
-      <div class="n">2022</div>
-      <div class="lbl">Год регистрации компании в РК</div>
-    </div>
-    <div class="stat">
-      <div class="n">100<span class="unit">%</span></div>
-      <div class="lbl">Проектов сданы в согласованные сроки</div>
-    </div>
-  </div>
 </section>
 
-<!-- ====== SERVICES ====== -->
+<!-- STATS STRIP -->
+<div class="hero-stats">
+  <div class="stat">
+    <div class="n">3<span class="unit">года</span></div>
+    <div class="lbl">Сопровождение инвентаризации KATCO без перерыва</div>
+  </div>
+  <div class="stat">
+    <div class="n">7+</div>
+    <div class="lbl">Крупных промышленных и государственных клиентов</div>
+  </div>
+  <div class="stat">
+    <div class="n">2022</div>
+    <div class="lbl">Год регистрации компании в РК</div>
+  </div>
+  <div class="stat">
+    <div class="n">100<span class="unit">%</span></div>
+    <div class="lbl">Проектов сданы в согласованные сроки</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
 <section class="section" id="services">
   <div class="section-head">
     <div>
@@ -987,32 +723,40 @@ img { display: block; max-width: 100%; }
   <div class="services-grid">
     <div class="service-card">
       <div class="num">— 01</div>
-      <h3>Аудит финансовой отчётности</h3>
-      <p>Независимая проверка отчётности в соответствии с МСФО и НСФО. Подтверждение достоверности данных для собственников, банков и инвесторов.</p>
+      <div class="service-body">
+        <h3>Аудит финансовой отчётности</h3>
+        <p>Независимая проверка отчётности в соответствии с МСФО и НСФО. Подтверждение достоверности данных для собственников, банков и инвесторов.</p>
+      </div>
       <div class="more">Подробнее →</div>
     </div>
     <div class="service-card">
       <div class="num">— 02</div>
-      <h3>Инвентаризация ТМЗ</h3>
-      <p>Сверка фактического наличия товарно-материальных запасов на складах и производственных площадках с данными бухгалтерского учёта.</p>
+      <div class="service-body">
+        <h3>Инвентаризация ТМЗ</h3>
+        <p>Сверка фактического наличия товарно-материальных запасов на складах и производственных площадках с данными бухгалтерского учёта.</p>
+      </div>
       <div class="more">Подробнее →</div>
     </div>
     <div class="service-card">
       <div class="num">— 03</div>
-      <h3>Аудит основных средств</h3>
-      <p>Проверка наличия, состояния и учётной стоимости основных средств — от производственного оборудования до объектов инфраструктуры.</p>
+      <div class="service-body">
+        <h3>Аудит основных средств</h3>
+        <p>Проверка наличия, состояния и учётной стоимости основных средств — от производственного оборудования до объектов инфраструктуры.</p>
+      </div>
       <div class="more">Подробнее →</div>
     </div>
     <div class="service-card">
       <div class="num">— 04</div>
-      <h3>Аналитические отчёты</h3>
-      <p>Подготовка структурированных итоговых материалов с рекомендациями по устранению расхождений и оптимизации учётных процессов.</p>
+      <div class="service-body">
+        <h3>Аналитические отчёты</h3>
+        <p>Подготовка структурированных итоговых материалов с рекомендациями по устранению расхождений и оптимизации учётных процессов.</p>
+      </div>
       <div class="more">Подробнее →</div>
     </div>
   </div>
 </section>
 
-<!-- ====== CASES ====== -->
+<!-- CASES -->
 <section class="section" id="cases">
   <div class="section-head">
     <div>
@@ -1032,10 +776,7 @@ img { display: block; max-width: 100%; }
         <li><span>Выявление и анализ расхождений</span></li>
         <li><span>Аналитические отчёты и рекомендации</span></li>
       </ul>
-      <div class="meta">
-        <span class="big">3</span>
-        <span>ГОДА ПОДРЯД</span>
-      </div>
+      <div class="meta"><span class="big">3</span><span>ГОДА ПОДРЯД</span></div>
     </article>
     <article class="case-card light">
       <span class="tag">Судостроение</span>
@@ -1047,15 +788,12 @@ img { display: block; max-width: 100%; }
         <li><span>Сверка активов с данными бухучёта</span></li>
         <li><span>Итоговая отчётность по результатам проверки</span></li>
       </ul>
-      <div class="meta">
-        <span class="big">1</span>
-        <span>ИЗ КРУПНЕЙШИХ ОБЪЕКТОВ</span>
-      </div>
+      <div class="meta"><span class="big">1</span><span>ИЗ КРУПНЕЙШИХ ОБЪЕКТОВ</span></div>
     </article>
   </div>
 </section>
 
-<!-- ====== COMPETENCIES ====== -->
+<!-- COMPETENCIES -->
 <section class="section comp-section">
   <div class="section-head">
     <div>
@@ -1067,38 +805,32 @@ img { display: block; max-width: 100%; }
   <div class="comp-grid">
     <div class="comp-item">
       <div class="ico" aria-hidden="true">01</div>
-      <h4>Крупные объёмы ТМЗ</h4>
-      <p>Опыт инвентаризации значительного количества товарно-материальных запасов и основных средств.</p>
+      <div><h4>Крупные объёмы ТМЗ</h4><p>Опыт инвентаризации значительного количества товарно-материальных запасов и основных средств.</p></div>
     </div>
     <div class="comp-item">
       <div class="ico" aria-hidden="true">02</div>
-      <h4>Распределённая структура</h4>
-      <p>Работа с предприятиями, у которых склады и площадки разнесены по нескольким регионам.</p>
+      <div><h4>Распределённая структура</h4><p>Работа с предприятиями, у которых склады и площадки разнесены по нескольким регионам.</p></div>
     </div>
     <div class="comp-item">
       <div class="ico" aria-hidden="true">03</div>
-      <h4>Сложная инфраструктура</h4>
-      <p>Проекты на объектах со сложной производственной и складской инфраструктурой.</p>
+      <div><h4>Сложная инфраструктура</h4><p>Проекты на объектах со сложной производственной и складской инфраструктурой.</p></div>
     </div>
     <div class="comp-item">
       <div class="ico" aria-hidden="true">04</div>
-      <h4>Нормативная база</h4>
-      <p>Соответствие требованиям законодательства РК, стандартов учёта и внутренних процедур заказчика.</p>
+      <div><h4>Нормативная база</h4><p>Соответствие требованиям законодательства РК, стандартов учёта и внутренних процедур заказчика.</p></div>
     </div>
     <div class="comp-item">
       <div class="ico" aria-hidden="true">05</div>
-      <h4>Независимость</h4>
-      <p>Член Профессиональной аудиторской организации «Союз аудиторов Казахстана» с 2022 года.</p>
+      <div><h4>Независимость</h4><p>Член Профессиональной аудиторской организации «Союз аудиторов Казахстана» с 2022 года.</p></div>
     </div>
     <div class="comp-item">
       <div class="ico" aria-hidden="true">06</div>
-      <h4>Полный цикл</h4>
-      <p>От планирования инвентаризации до подготовки итогового отчёта и презентации результатов.</p>
+      <div><h4>Полный цикл</h4><p>От планирования инвентаризации до подготовки итогового отчёта и презентации результатов.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ====== CLIENTS ====== -->
+<!-- CLIENTS -->
 <section class="section" id="clients">
   <div class="section-head">
     <div>
@@ -1108,42 +840,18 @@ img { display: block; max-width: 100%; }
     <p class="desc">Компании, по&nbsp;которым ТОО «Audit Vector» проводило аудиторскую проверку и&nbsp;сопутствующие услуги.</p>
   </div>
   <div class="clients-grid">
-    <div class="client-cell">
-      <div class="name">Baker Hughes Nitrogen Plant LLC</div>
-      <div class="ind">Нефтегаз</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">НК «Kazakh Tourism»</div>
-      <div class="ind">Государственный сектор</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">АО «Уральский завод "Зенит"»</div>
-      <div class="ind">Судостроение</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">Бюро Веритас Марин Казахстан</div>
-      <div class="ind">Сертификация</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">Корпоративный Фонд «Туристік Қамқор»</div>
-      <div class="ind">Фонд</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">ТОО «МетСталь»</div>
-      <div class="ind">Металлургия</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">ТОО «Азотный завод»</div>
-      <div class="ind">Химпром</div>
-    </div>
-    <div class="client-cell">
-      <div class="name">KATCO</div>
-      <div class="ind">Уран · СП</div>
-    </div>
+    <div class="client-cell"><div class="name">Baker Hughes Nitrogen Plant LLC</div><div class="ind">Нефтегаз</div></div>
+    <div class="client-cell"><div class="name">НК «Kazakh Tourism»</div><div class="ind">Государственный сектор</div></div>
+    <div class="client-cell"><div class="name">АО «Уральский завод "Зенит"»</div><div class="ind">Судостроение</div></div>
+    <div class="client-cell"><div class="name">Бюро Веритас Марин Казахстан</div><div class="ind">Сертификация</div></div>
+    <div class="client-cell"><div class="name">Корпоративный Фонд «Туристік Қамқор»</div><div class="ind">Фонд</div></div>
+    <div class="client-cell"><div class="name">ТОО «МетСталь»</div><div class="ind">Металлургия</div></div>
+    <div class="client-cell"><div class="name">ТОО «Азотный завод»</div><div class="ind">Химпром</div></div>
+    <div class="client-cell"><div class="name">KATCO</div><div class="ind">Уран · СП</div></div>
   </div>
 </section>
 
-<!-- ====== PRINCIPLES ====== -->
+<!-- PRINCIPLES -->
 <section class="section" id="about">
   <div class="section-head">
     <div>
@@ -1176,7 +884,7 @@ img { display: block; max-width: 100%; }
   </div>
 </section>
 
-<!-- ====== CTA ====== -->
+<!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="cta-inner">
     <div>
@@ -1198,21 +906,16 @@ img { display: block; max-width: 100%; }
   </div>
 </section>
 
-<!-- ====== FOOTER ====== -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-top">
     <div class="footer-col">
-      <a href="/" class="logo" aria-label="Audit Vector">
-        <div class="mark" aria-hidden="true">AV</div>
-        <span>Audit Vector</span>
-      </a>
+      <a href="/" class="logo"><div class="mark" aria-hidden="true">AV</div><span>Audit Vector</span></a>
       <p class="tagline">ТОО «Audit Vector» — независимый аудит, инвентаризация и&nbsp;сопутствующие услуги для&nbsp;промышленных и&nbsp;государственных заказчиков.</p>
     </div>
     <div class="footer-col">
       <h5>Адрес</h5>
-      <p>г. Астана</p>
-      <p>ЖК Тельман</p>
-      <p>ул. Аккемер 12/3</p>
+      <p>г. Астана</p><p>ЖК Тельман</p><p>ул. Аккемер 12/3</p>
     </div>
     <div class="footer-col">
       <h5>Контакты</h5>
@@ -1232,7 +935,6 @@ img { display: block; max-width: 100%; }
 </footer>
 
 <script>
-  // Mobile nav drawer
   const drawer = document.getElementById('navDrawer');
   const burger = document.getElementById('burgerBtn');
   const close  = document.getElementById('drawerClose');
@@ -1256,7 +958,6 @@ img { display: block; max-width: 100%; }
   backdrop.addEventListener('click', closeDrawer);
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
 
-  // Contact form
   document.querySelector('.cta-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = this.querySelector('button[type="submit"]');
