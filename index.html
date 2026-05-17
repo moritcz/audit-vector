@@ -29,7 +29,7 @@
 
 /* ============ RESET ============ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 16px;
@@ -542,10 +542,18 @@ img { display: block; max-width: 100%; }
   .stat .n .unit { font-size: 16px; }
   .stat .lbl { font-size: 12px; margin-top: 8px; max-width: none; }
 
+  /* Prevent all children from blowing out grid tracks */
+  .hero-stats > *,
+  .services-grid > *, .cases-grid > *, .comp-grid > *,
+  .clients-grid > *, .princ-grid > * { min-width: 0; }
+
+  /* Eyebrow — reduce spacing so long text fits small screens */
+  .eyebrow { letter-spacing: 0.06em; font-size: 10px; }
+
   /* Sections */
   .section { padding: 56px 20px; }
   .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 28px; }
-  .section-head h2 { font-size: 30px; }
+  .section-head h2 { font-size: 28px; overflow-wrap: break-word; }
   .section-head .desc { font-size: 14px; padding-top: 0; }
 
   /* Services — list style */
@@ -556,19 +564,19 @@ img { display: block; max-width: 100%; }
   }
   .service-card {
     display: grid;
-    grid-template-columns: 36px 1fr 20px;
-    gap: 16px;
+    grid-template-columns: 30px minmax(0, 1fr) 18px;
+    gap: 12px;
     align-items: start;
-    padding: 24px 0;
+    padding: 20px 0;
     border-right: none;
     border-top: none;
     border-bottom: 1px solid var(--line);
     min-height: 0;
   }
   .service-card .num { font-size: 11px; padding-top: 3px; }
-  .service-card .service-body { flex: none; }
-  .service-card h3 { font-size: 17px; font-weight: 500; margin: 0 0 6px; letter-spacing: -0.01em; }
-  .service-card p { font-size: 13px; }
+  .service-card .service-body { flex: none; min-width: 0; }
+  .service-card h3 { font-size: 16px; font-weight: 500; margin: 0 0 5px; letter-spacing: -0.01em; overflow-wrap: break-word; }
+  .service-card p { font-size: 13px; overflow-wrap: break-word; }
   .service-card .more {
     font-size: 16px; margin-top: 0; color: var(--brand);
     display: flex; align-items: flex-start; padding-top: 3px;
@@ -576,10 +584,18 @@ img { display: block; max-width: 100%; }
 
   /* Cases */
   .cases-grid { grid-template-columns: 1fr; gap: 16px; }
-  .case-card { padding: 28px 24px; min-height: auto; }
-  .case-card h3 { font-size: 22px; margin: 18px 0 4px; }
-  .case-card .sub { font-size: 13px; margin-bottom: 20px; }
-  .case-card li { font-size: 13px; padding: 10px 0; }
+  .case-card { padding: 24px 20px; min-height: auto; }
+  .case-card .tag {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    white-space: normal;
+    border-radius: var(--radius);
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .case-card h3 { font-size: 20px; margin: 16px 0 4px; overflow-wrap: break-word; }
+  .case-card .sub { font-size: 13px; margin-bottom: 18px; overflow-wrap: break-word; }
+  .case-card li { font-size: 13px; padding: 10px 0; grid-template-columns: 18px minmax(0,1fr); }
   .case-card .meta .big { font-size: 28px; }
   .case-card .meta { font-size: 11px; }
 
@@ -588,32 +604,32 @@ img { display: block; max-width: 100%; }
   .comp-item {
     padding: 24px 0;
     display: grid;
-    grid-template-columns: 44px 1fr;
-    gap: 16px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 14px;
     align-items: start;
   }
   .comp-item:nth-child(3n) { padding-right: 0; }
-  .comp-item .ico { margin-bottom: 0; }
-  .comp-item h4 { font-size: 16px; margin: 2px 0 4px; }
-  .comp-item p { font-size: 13px; }
+  .comp-item .ico { margin-bottom: 0; flex-shrink: 0; }
+  .comp-item h4 { font-size: 15px; margin: 2px 0 4px; overflow-wrap: break-word; }
+  .comp-item p { font-size: 13px; overflow-wrap: break-word; }
 
   /* Clients */
   .clients-grid { grid-template-columns: 1fr 1fr; }
-  .client-cell { padding: 18px 16px; min-height: 100px; }
-  .client-cell .name { font-size: 13px; }
-  .client-cell .ind { font-size: 10px; }
+  .client-cell { padding: 16px 14px; min-height: 90px; }
+  .client-cell .name { font-size: 12px; overflow-wrap: break-word; line-height: 1.4; }
+  .client-cell .ind { font-size: 10px; letter-spacing: 0.04em; margin-top: 8px; overflow-wrap: break-word; }
 
   /* Principles */
   .princ-grid { grid-template-columns: 1fr; gap: 0; }
   .princ-item { padding: 24px 0; border-bottom: 1px solid var(--line); }
   .princ-item:last-child { border-bottom: none; }
-  .princ-item h4 { font-size: 20px; margin: 16px 0 6px; }
-  .princ-item p { font-size: 13px; }
+  .princ-item h4 { font-size: 20px; margin: 16px 0 6px; overflow-wrap: break-word; }
+  .princ-item p { font-size: 13px; overflow-wrap: break-word; }
 
   /* CTA */
   .cta-section { padding: 56px 20px; }
   .cta-inner { grid-template-columns: 1fr; gap: 28px; align-items: start; }
-  .cta-inner h2 { font-size: 30px; margin-top: 12px; }
+  .cta-inner h2 { font-size: 28px; margin-top: 12px; overflow-wrap: break-word; }
   .cta-form { padding: 0; background: transparent; border: none; border-radius: 0; }
   .cta-form .row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
   .cta-form input, .cta-form textarea { padding: 13px 14px; margin-bottom: 10px; }
@@ -626,8 +642,12 @@ img { display: block; max-width: 100%; }
   .footer-col { padding: 16px 0; border-bottom: 1px solid var(--line); }
   .footer-col:last-child { border-bottom: none; }
   .footer-col h5 { font-size: 10px; margin-bottom: 10px; }
-  .footer-col p, .footer-col a, .footer-col span { font-size: 13px; }
-  .footer-bot { flex-direction: column; gap: 4px; font-size: 10px; padding-top: 16px; }
+  .footer-col p, .footer-col a, .footer-col span { font-size: 13px; overflow-wrap: break-word; }
+  .footer-bot { flex-direction: column; gap: 4px; font-size: 10px; padding-top: 16px; word-break: break-word; }
+
+  /* License card rows — values can break on narrow screens */
+  .lic-rows .v { font-size: 12px; overflow-wrap: break-word; }
+  .hero h1 { overflow-wrap: break-word; }
 }
 </style>
 </head>
@@ -686,7 +706,7 @@ img { display: block; max-width: 100%; }
       <div><div class="k">Выдана</div><div class="v">13 ноября 2024</div></div>
       <div><div class="k">Орган</div><div class="v">КК МФ РК</div></div>
       <div><div class="k">Регистрация</div><div class="v">09 июня 2022</div></div>
-      <div><div class="k">Членство</div><div class="v">Союз Аудиторов&nbsp;РК</div></div>
+      <div><div class="k">Членство</div><div class="v">Союз Аудиторов РК</div></div>
     </div>
   </aside>
 </section>
